@@ -23,8 +23,8 @@ function init(): void {
 }
 
 //  Test Mesh
-function createTestMesh(): THREE.Points {
-  const geometry = new THREE.PlaneGeometry(1, 1, 50, 50);
+function createTestMesh(): THREE.Mesh {
+  const geometry = new THREE.PlaneGeometry(100, 100, 50, 50);
   const material = new THREE.ShaderMaterial({
     uniforms: {
       time: { value: 0 },
@@ -32,7 +32,7 @@ function createTestMesh(): THREE.Points {
     vertexShader,
     fragmentShader,
   });
-  return new THREE.Points(geometry, material);
+  return new THREE.Mesh(geometry, material);
 }
 
 //  Animate
@@ -40,7 +40,7 @@ function animate(
   renderer: THREE.WebGLRenderer,
   scene: THREE.Scene,
   camera: THREE.OrthographicCamera | THREE.PerspectiveCamera,
-  testMesh: THREE.Points
+  testMesh: THREE.Mesh
 ): void {
   function animateFrame(): void {
     requestAnimationFrame(animateFrame);
