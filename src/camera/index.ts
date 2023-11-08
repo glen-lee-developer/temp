@@ -19,5 +19,6 @@ export function createCamera(): THREE.OrthographicCamera {
     -1000,
     1000
   );
+
   return camera;
 }
