@@ -31,6 +31,7 @@ function createMyMesh(): THREE.Mesh {
     side: THREE.DoubleSide,
     uniforms: {
       time: { value: 0 },
+      resolution: { value: new THREE.Vector4() },
       matcap: { value: new THREE.TextureLoader().load(matcap) },
       matcap1: { value: new THREE.TextureLoader().load(matcap1) },
       mouse: { value: new THREE.Vector2(0, 0) },
